@@ -1,0 +1,114 @@
+﻿
+@import url('https://fonts.googleapis.com/css2?family=Hurricane&family=Roboto+Condensed:wght@300&display=swap');
+
+:root {
+    --main-color: rgba(253, 253, 253, 0);
+    --main-colorr: #ffffff;
+    --sub-color: #ffffff;
+    --text-color: #000000;
+    --green: #1ec6b6;
+    --light-grey: #f7f7f7;
+    --dark: #0e1010;
+    --trans: all 0.3s ease-in-out;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.justify-content {
+    justify-content: space-between;
+}
+
+.container {
+    margin: auto;
+    max-width: 1200px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+
+/* ### BLOG PAGE ### */
+/* blog */
+
+.blog {
+    padding: 20px;
+    text-align: center;
+    background: #ddd;
+    margin-top: 20px;
+}
+
+.blog .container {
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+}
+.blog-item {
+    background-color: #fff;
+    -webkit-transition: var(--trans);
+    -o-transition: var(--trans);
+    transition: var(--trans);
+}
+
+.blog-item-top {
+    position: relative;
+}
+
+.blog-date {
+    position: absolute;
+    background-color: var(--green);
+    color: #fff;
+    padding: 0.5rem;
+    height: 38px;
+    min-width: 160px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    bottom: -19px;
+    left: 5%;
+}
+
+.blog-item-bottom {
+    padding: 2rem 1rem;
+}
+
+.blog-item-bottom span {
+        text-transform: uppercase;
+        color: var(--dark);
+        opacity: 0.7;
+        letter-spacing: 2px;
+        display: block;
+        margin-top: 1rem;
+}
+
+.blog-item-bottom a {
+        margin: 1rem 0;
+        font-size: 1.4rem;
+        display: block;
+        font-family: 'Raleway',sans-serif;
+        font-weight: 600;
+        line-height: 1.6;
+        -webkit-transition: var(--trans);
+        -o-transition: var(--trans);
+        transition: var(--trans);
+}
+
+.blog-item-bottom a:hover {
+        opacity: 0.8;
+}
+

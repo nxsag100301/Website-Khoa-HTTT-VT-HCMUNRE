@@ -1,0 +1,49 @@
+﻿@model UM.Models.HOCKY
+
+@{
+    Layout = null;
+    Layout = "~/Views/Shared/GV.cshtml";
+}
+<h2>Chi Tiết Học Kỳ</h2>
+
+<div>
+    <h4>HOCKY</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Mã Học Kỳ
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaHK)
+        </dd>
+
+        <dt>
+            Tên Học Kỳ
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenHK)
+        </dd>
+
+        <dt>
+            Tín Chí
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tinchi)
+        </dd>
+
+        <dt>
+            Số Tiết
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sotiet)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    |@Html.ActionLink("Back to List", "IndexHK")|
+</p>

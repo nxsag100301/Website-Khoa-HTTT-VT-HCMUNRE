@@ -1,0 +1,46 @@
+﻿@model IEnumerable<UM.Models.TINTUC>
+
+@{
+    ViewBag.Title = "IndexTT";
+    Layout = "~/Views/Shared/GV.cshtml";
+}
+
+<h2>Tin Tức</h2>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MaTT)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tieude)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ngaydang)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MaGVK)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaTT)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tieude)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ngaydang)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaGVK)
+            </td>
+            <td>|
+                @Html.ActionLink("Xem Chi Tiết", "DetailsTT", new { matt = item.MaTT }) |
+            </td>
+        </tr>
+    }
+    
+    </table>

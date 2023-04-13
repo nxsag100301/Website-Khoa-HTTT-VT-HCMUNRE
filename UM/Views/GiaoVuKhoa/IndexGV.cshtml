@@ -1,0 +1,80 @@
+﻿@model IEnumerable<UM.Models.GIANGVIEN>
+
+@{
+    ViewBag.Title = "IndexGV";
+    Layout = "~/Views/Shared/GVK.cshtml";
+}
+<br />
+<div class="text-center">
+    <h2>Danh Sách Giảng Viên</h2>
+</div>
+
+<p>
+    @Html.ActionLink("Tạo Giảng Viên", "CreateGV")
+</p>
+<table class="table">
+    <thead>
+        <tr class="table-success text-center">
+            <th>
+                Mã Giáo Vụ Khoa
+            </th>
+            <th>
+                Họ và tên
+            </th>
+            <th>
+                Ngày Sinh
+            </th>
+            <th>
+                Điện Thoại
+            </th>
+            <th>
+                Địa Chỉ
+            </th>
+            <th>
+                Gmail
+            </th>
+            <th>
+                Mã Môn Học
+            <th>
+                Mã Lớp Học
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MaGV)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HotenGV)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ngaysinh)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Dienthoai)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Diachi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Gmail)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MaMH)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MaLH)
+                </td>
+                <td>
+                    @Html.ActionLink("Chỉnh Sửa", "EditGV", new { magv = item.MaGV }) |
+                    @Html.ActionLink("Xem Chi Tiết", "DetailsGV", new { magv = item.MaGV }) |
+                    @Html.ActionLink("Xóa", "DeleteGV", new { magv = item.MaGV })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

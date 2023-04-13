@@ -1,0 +1,44 @@
+﻿@model IEnumerable<UM.Models.LOPHOC>
+
+@{
+    ViewBag.Title = "IndexLH";
+    Layout = "~/Views/Shared/GVK.cshtml";
+}
+
+<br />
+<div class="text-center">
+    <h2>Danh Sách Giáo Vụ Khoa</h2>
+</div>
+<p>
+    @Html.ActionLink("Create New", "CreateLH")
+</p>
+<table class="table">
+    <tr class="table-success text-center">
+        <th>
+            Mã Lớp Học
+        </th>
+        <th>
+            Tên Lớp Học
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaLH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenLH)
+            </td>
+            <td>
+                @Html.ActionLink("Chỉnh Sửa", "EditLH", new { malh = item.MaLH }) |
+                @Html.ActionLink("Xem Chi Tiết", "DetailsLH", new { malh = item.MaLH }) |
+                @Html.ActionLink("Xóa", "DeleteLH", new { malh = item.MaLH })
+            </td>
+        </tr>
+    }
+
+</table>
+

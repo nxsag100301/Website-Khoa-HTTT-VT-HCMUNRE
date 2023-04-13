@@ -1,0 +1,55 @@
+﻿@model IEnumerable<UM.Models.MONHOC>
+
+@{
+    ViewBag.Title = "IndexMH";
+    Layout = "~/Views/Shared/GV.cshtml";
+}
+<div class="text-center">
+    <h2>Danh Sách Môn Học</h2>
+</div>
+    <table class="table">
+        <tr class="table-success text-center">
+            <th>
+                Mã Môn Học
+            </th>
+            <th>
+                Tên Môn Học
+            </th>
+            <th>
+                Tín Chỉ
+            </th>
+            <th>
+                Số Tiết
+            </th>
+            <th>
+                Mã Học Kỳ
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MaMH)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TenMH)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tinchi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Sotiet)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MaHK)
+                </td>
+                <td>
+                    |
+                    @Html.ActionLink("Xem Chi Tiết", "DetailsMH", new { mamh = item.MaMH }) |
+                </td>
+            </tr>
+        }
+
+    </table>

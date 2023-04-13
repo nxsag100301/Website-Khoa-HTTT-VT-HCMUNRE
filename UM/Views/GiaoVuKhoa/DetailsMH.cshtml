@@ -1,0 +1,59 @@
+﻿@model UM.Models.MONHOC
+
+@{
+    Layout = null;
+    Layout = "~/Views/Shared/GVK.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>DetailsMH</title>
+</head>
+<body>
+    <div>
+        <h4>MONHOC</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                Tên Môn Học
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.TenMH)
+            </dd>
+    
+            <dt>
+                Tín Chỉ
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Tinchi)
+            </dd>
+    
+            <dt>
+                Số Tiết
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Sotiet)
+            </dd>
+    
+            <dt>
+                Mã Học Kỳ
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.MaHK)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        |
+        @Html.ActionLink("Back to List", "IndexMH")|
+    </p>
+</body>
+</html>

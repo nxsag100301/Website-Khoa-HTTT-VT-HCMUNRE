@@ -1,0 +1,57 @@
+﻿@model UM.Models.MONHOC
+
+@{
+    ViewBag.Title = "DetailsMH";
+    Layout = "~/Views/Shared/GV.cshtml";
+}
+
+
+    <div>
+        <h4>Chi Tiết Môn Học</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                Mã Môn Học
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.MaMH)
+            </dd>
+
+            <dt>
+                Tên Môn Học
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.TenMH)
+            </dd>
+
+            <dt>
+                Tín Chỉ
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Tinchi)
+            </dd>
+
+            <dt>
+                Số Tiết
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Sotiet)
+            </dd>
+
+            <dt>
+                Mã Học Kỳ
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.MaHK)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        | @Html.ActionLink("Back to List", "IndexMH") |
+    </p>

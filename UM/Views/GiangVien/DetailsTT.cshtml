@@ -1,0 +1,49 @@
+﻿@model UM.Models.TINTUC
+
+@{
+    ViewBag.Title = "DetailsTT";
+    Layout = "~/Views/Shared/GV.cshtml";
+}
+
+
+    <div>
+        <h4>Chi tiết Tin Tức</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.MaTT)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.MaTT)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Tieude)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Tieude)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Ngaydang)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Ngaydang)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.MaGVK)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.MaGVK)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        | @Html.ActionLink("Back to List", "IndexTT") |
+    </p>

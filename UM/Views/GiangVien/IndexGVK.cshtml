@@ -1,0 +1,66 @@
+﻿@model IEnumerable<UM.Models.GVKHOA>
+
+@{
+    Layout = null;
+    Layout = "~/Views/Shared/GV.cshtml";
+}
+<div class="text-center">
+    <h2>Danh Sách Giáo Vụ Khoa</h2>
+</div>
+    <table class="table">
+        <tr class="table-success text-center">
+            <th>
+                Mã Giáo Vụ Khoa
+            </th>
+            <th>
+                Họ và tên
+            </th>
+            <th>
+                Ngày Sinh
+            </th>
+            <th>
+                Điện Thoại
+            </th>
+            <th>
+                Địa Chỉ
+            </th>
+            <th>
+                Gmail
+            </th>
+            <th>
+                Mã Lớp Học
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MaGVK)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HotenGVK)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ngaysinh)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Dienthoai)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Diachi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Gmail)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MaLH)
+                </td>
+                <td>
+                    | @Html.ActionLink("Xem Chi Tiết", "DetailsGVK", new { magvk = item.MaGVK }) |
+                </td>
+            </tr>
+        }
+
+    </table>

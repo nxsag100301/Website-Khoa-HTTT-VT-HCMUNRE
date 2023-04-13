@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QUANLYKHOA" Class="EDUCATIONDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=DESKTOP-QRACJNG\SERVERGOC;Initial Catalog=QUANLYKHOA;Persist Security Info=True;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="QUANLYKHOAConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.GIANGVIEN" Member="GIANGVIENs">
+    <Type Name="GIANGVIEN">
+      <Column Name="MaGV" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="HotenGV" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Ngaysinh" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Dienthoai" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="Diachi" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Gmail" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MaMH" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="MaLH" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Association Name="GIANGVIEN_LoginGV" Member="LoginGVs" ThisKey="MaGV" OtherKey="MaGV" Type="LoginGV" />
+      <Association Name="LOPHOC_GIANGVIEN" Member="LOPHOC" ThisKey="MaLH" OtherKey="MaLH" Type="LOPHOC" IsForeignKey="true" />
+      <Association Name="MONHOC_GIANGVIEN" Member="MONHOC" ThisKey="MaMH" OtherKey="MaMH" Type="MONHOC" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.GVKHOA" Member="GVKHOAs">
+    <Type Name="GVKHOA">
+      <Column Name="MaGVK" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="HotenGVK" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Ngaysinh" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Dienthoai" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="Diachi" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Gmail" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MaLH" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Association Name="GVKHOA_LoginGVK" Member="LoginGVKs" ThisKey="MaGVK" OtherKey="MaGVK" Type="LoginGVK" />
+      <Association Name="GVKHOA_TINTUC" Member="TINTUCs" ThisKey="MaGVK" OtherKey="MaGVK" Type="TINTUC" />
+      <Association Name="LOPHOC_GVKHOA" Member="LOPHOC" ThisKey="MaLH" OtherKey="MaLH" Type="LOPHOC" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HOCKY" Member="HOCKies">
+    <Type Name="HOCKY">
+      <Column Name="MaHK" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenHK" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Tinchi" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Sotiet" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="HOCKY_MONHOC" Member="MONHOCs" ThisKey="MaHK" OtherKey="MaHK" Type="MONHOC" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LoginGV" Member="LoginGVs">
+    <Type Name="LoginGV">
+      <Column Name="MaLogin" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaGV" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Association Name="GIANGVIEN_LoginGV" Member="GIANGVIEN" ThisKey="MaGV" OtherKey="MaGV" Type="GIANGVIEN" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LoginGVK" Member="LoginGVKs">
+    <Type Name="LoginGVK">
+      <Column Name="MaLogin" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaGVK" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Association Name="GVKHOA_LoginGVK" Member="GVKHOA" ThisKey="MaGVK" OtherKey="MaGVK" Type="GVKHOA" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LOPHOC" Member="LOPHOCs">
+    <Type Name="LOPHOC">
+      <Column Name="MaLH" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenLH" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="LOPHOC_GIANGVIEN" Member="GIANGVIENs" ThisKey="MaLH" OtherKey="MaLH" Type="GIANGVIEN" />
+      <Association Name="LOPHOC_GVKHOA" Member="GVKHOAs" ThisKey="MaLH" OtherKey="MaLH" Type="GVKHOA" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MONHOC" Member="MONHOCs">
+    <Type Name="MONHOC">
+      <Column Name="MaMH" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenMH" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Tinchi" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Sotiet" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaHK" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Association Name="MONHOC_GIANGVIEN" Member="GIANGVIENs" ThisKey="MaMH" OtherKey="MaMH" Type="GIANGVIEN" />
+      <Association Name="HOCKY_MONHOC" Member="HOCKY" ThisKey="MaHK" OtherKey="MaHK" Type="HOCKY" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TINTUC" Member="TINTUCs">
+    <Type Name="TINTUC">
+      <Column Name="MaTT" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Tieude" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Ngaydang" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="MaGVK" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Association Name="GVKHOA_TINTUC" Member="GVKHOA" ThisKey="MaGVK" OtherKey="MaGVK" Type="GVKHOA" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

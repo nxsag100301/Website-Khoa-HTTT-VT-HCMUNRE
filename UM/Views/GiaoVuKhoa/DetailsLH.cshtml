@@ -1,0 +1,35 @@
+﻿@model UM.Models.LOPHOC
+
+@{
+    ViewBag.Title = "IndexGVK";
+    Layout = "~/Views/Shared/GVK.cshtml";
+}
+
+
+
+
+    <div>
+        <h4>Chi Tiết Lớp Học</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                Mã lớp học
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.MaLH)
+            </dd>
+
+            <dt>
+                Tên lớp học
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.TenLH)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        |@Html.ActionLink("Back to List", "IndexLH")|
+    </p>
+

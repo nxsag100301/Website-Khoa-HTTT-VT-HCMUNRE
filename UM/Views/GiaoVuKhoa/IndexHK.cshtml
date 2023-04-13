@@ -1,0 +1,55 @@
+﻿@model IEnumerable<UM.Models.HOCKY>
+
+@{
+    ViewBag.Title = "IndexHK";
+    Layout = "~/Views/Shared/GVK.cshtml";
+}
+<br />
+<div class="text-center">
+    <h2>Danh Sách Học Kỳ</h2>
+</div>
+        <p>
+            @Html.ActionLink("Tạo mới học kỳ", "CreateHK")
+        </p>
+
+    <table class="table">
+        <tr class="table-success text-center">
+            <th>
+                Mã Học Kỳ
+            </th>
+            <th>
+                Tên Học Kỳ
+            </th>
+            <th>
+                Tín Chí
+            </th>
+            <th>
+                Số Tiết
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MaHK)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TenHK)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tinchi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Sotiet)
+                </td>
+                <td>
+                    @Html.ActionLink("Chỉnh Sửa", "EditHK", new { mahk = item.MaHK }) |
+                    @Html.ActionLink("Xem Chi Tiết", "DetailsHK", new { mahk = item.MaHK }) |
+                    @Html.ActionLink("Xóa", "DeleteHK", new { mahk = item.MaHK })
+                </td>
+            </tr>
+        }
+
+    </table>

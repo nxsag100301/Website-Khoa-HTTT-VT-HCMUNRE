@@ -1,0 +1,75 @@
+﻿@model UM.Models.GVKHOA
+
+@{
+    ViewBag.Title = "DetailsGVK";
+    Layout = "~/Views/Shared/GVK.cshtml";
+}
+
+<h2>Chi Tiết Giáo vụ Khoa</h2>
+
+<div>
+    <h4>GVKHOA</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Mã Giáo Vụ Khoa
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaGVK)
+        </dd>
+
+        <dt>
+            Họ và tên
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HotenGVK)
+        </dd>
+
+        <dt>
+            Ngày Sinh
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ngaysinh)
+        </dd>
+
+        <dt>
+            Số Điện Thoại
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dienthoai)
+        </dd>
+
+        <dt>
+           Địa Chỉ
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Diachi)
+        </dd>
+
+        <dt>
+            Gmail
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gmail)
+        </dd>
+
+        <dt>
+            MaLH
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaLH)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaGVK }) |
+    @Html.ActionLink("Back to List", "IndexGVK")
+</p>

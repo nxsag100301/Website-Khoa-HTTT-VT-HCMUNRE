@@ -1,0 +1,64 @@
+﻿@model UM.Models.HOCKY
+
+@{
+    ViewBag.Title = "CreateHK";
+    Layout = "~/Views/Shared/GVK.cshtml";
+}
+
+<h2>CreateHK</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        Mã Học Kỳ
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.MaHK, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.MaHK, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        Tên Học Kỳ
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.TenHK, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TenHK, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        Tín Chí
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Tinchi, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Tinchi, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        Số Tiết
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Sotiet, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Sotiet, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Tạo mới" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "IndexHK")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
